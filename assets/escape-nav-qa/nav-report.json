@@ -1,0 +1,331 @@
+{
+  "schema": "generate2dmap.nav_report.v1",
+  "status": "pass",
+  "method": "plan Appendix C validity (centre + 8 footprint samples against walk regions, solids, object footprints scaled once, tile collision and material classes) on a grid of cell max(1, round(r/2)) px; 4-neighbour moves open when segmentClear holds between node centres (samples every cell/2, plus the exact thin-gap centre path and one_way direction); BFS from every spawn and portal arrival to every interaction, exit, anchor slot and approach point",
+  "notProven": [
+    "that the collision data matches the painted art",
+    "positions closer than one grid cell to a blocker (the grid samples cell centres)",
+    "runtime movement code: map-runtime.mjs parity is tested during integration",
+    "links to maps not passed with --link"
+  ],
+  "checks": [
+    {
+      "id": "starts_valid",
+      "status": "pass",
+      "value": {
+        "starts": 1,
+        "blocked": []
+      },
+      "threshold": {
+        "blocked": 0
+      }
+    },
+    {
+      "id": "targets_reachable",
+      "status": "pass",
+      "value": {
+        "reachable": 12,
+        "total": 12,
+        "unreachable": []
+      },
+      "threshold": {
+        "unreachable": 0
+      }
+    },
+    {
+      "id": "portals_inside_world",
+      "status": "pass",
+      "value": {
+        "outside": []
+      },
+      "threshold": {
+        "outside": 0
+      }
+    },
+    {
+      "id": "arrivals_outside_triggers",
+      "status": "pass",
+      "value": {
+        "problems": 0
+      },
+      "threshold": {
+        "problems": 0
+      }
+    },
+    {
+      "id": "reciprocal_links",
+      "status": "pass",
+      "value": {
+        "links": [],
+        "notChecked": []
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "thin_gaps",
+      "status": "pass",
+      "value": 0,
+      "threshold": "reported: moves the thin-gap rule closed although every footprint sample was valid"
+    },
+    {
+      "id": "unreachable_walkable_area",
+      "status": "pass",
+      "value": {
+        "pockets": 0,
+        "cells": 0
+      },
+      "threshold": "reported"
+    },
+    {
+      "id": "blocked_rects_union",
+      "status": "pass",
+      "value": {
+        "rects": 54,
+        "blockedCells": 8035
+      },
+      "threshold": "union == blocked cells"
+    },
+    {
+      "id": "footprints_scaled_once",
+      "status": "pass",
+      "value": {
+        "objectSolids": 0
+      },
+      "threshold": "object footprint x scale, never inflated by the actor radius"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "../escape-map-bundle.json",
+      "sha256": "c978cc6295cc47608b6a48f7145f08041e98fa249bcf167c42f3109352d2ac34",
+      "bytes": 1657
+    }
+  ],
+  "outputs": [
+    {
+      "path": "nav-grid.json",
+      "sha256": "875c444c4676c91a7c50f5f5c31059049099d5662c36539f1415c520571e7f81",
+      "bytes": 26575
+    },
+    {
+      "path": "nav-debug.png",
+      "sha256": "84516817f1372943529963ee9a4524389166de4c05cad741766bf48ef059f2aa",
+      "bytes": 2734
+    }
+  ],
+  "tool": {
+    "name": "map_nav.py",
+    "version": "0.5.0"
+  },
+  "map": "fox-forest-escape",
+  "cell": 4,
+  "starts": [
+    {
+      "kind": "spawn",
+      "id": "fox-start",
+      "point": [
+        48.0,
+        48.0
+      ],
+      "reachable": true,
+      "steps": 0,
+      "node": [
+        46.0,
+        46.0
+      ],
+      "reason": null
+    }
+  ],
+  "targets": [
+    {
+      "kind": "interaction",
+      "id": "truth-1",
+      "point": [
+        112.0,
+        48.0
+      ],
+      "reachable": true,
+      "steps": 12,
+      "node": [
+        106.0,
+        46.0
+      ],
+      "reason": null
+    },
+    {
+      "kind": "interaction",
+      "id": "truth-2",
+      "point": [
+        304.0,
+        48.0
+      ],
+      "reachable": true,
+      "steps": 145,
+      "node": [
+        298.0,
+        50.0
+      ],
+      "reason": null
+    },
+    {
+      "kind": "interaction",
+      "id": "truth-3",
+      "point": [
+        432.0,
+        48.0
+      ],
+      "reachable": true,
+      "steps": 177,
+      "node": [
+        426.0,
+        50.0
+      ],
+      "reason": null
+    },
+    {
+      "kind": "interaction",
+      "id": "truth-4",
+      "point": [
+        48.0,
+        112.0
+      ],
+      "reachable": true,
+      "steps": 12,
+      "node": [
+        46.0,
+        106.0
+      ],
+      "reason": null
+    },
+    {
+      "kind": "interaction",
+      "id": "truth-5",
+      "point": [
+        240.0,
+        112.0
+      ],
+      "reachable": true,
+      "steps": 116,
+      "node": [
+        246.0,
+        114.0
+      ],
+      "reason": null
+    },
+    {
+      "kind": "interaction",
+      "id": "truth-6",
+      "point": [
+        368.0,
+        112.0
+      ],
+      "reachable": true,
+      "steps": 119,
+      "node": [
+        362.0,
+        114.0
+      ],
+      "reason": null
+    },
+    {
+      "kind": "interaction",
+      "id": "truth-7",
+      "point": [
+        176.0,
+        176.0
+      ],
+      "reachable": true,
+      "steps": 58,
+      "node": [
+        174.0,
+        170.0
+      ],
+      "reason": null
+    },
+    {
+      "kind": "interaction",
+      "id": "truth-8",
+      "point": [
+        304.0,
+        176.0
+      ],
+      "reachable": true,
+      "steps": 90,
+      "node": [
+        302.0,
+        170.0
+      ],
+      "reason": null
+    },
+    {
+      "kind": "interaction",
+      "id": "truth-9",
+      "point": [
+        112.0,
+        240.0
+      ],
+      "reachable": true,
+      "steps": 84,
+      "node": [
+        110.0,
+        234.0
+      ],
+      "reason": null
+    },
+    {
+      "kind": "interaction",
+      "id": "truth-10",
+      "point": [
+        368.0,
+        240.0
+      ],
+      "reachable": true,
+      "steps": 122,
+      "node": [
+        366.0,
+        234.0
+      ],
+      "reason": null
+    },
+    {
+      "kind": "interaction",
+      "id": "truth-11",
+      "point": [
+        240.0,
+        304.0
+      ],
+      "reachable": true,
+      "steps": 106,
+      "node": [
+        238.0,
+        298.0
+      ],
+      "reason": null
+    },
+    {
+      "kind": "interaction",
+      "id": "truth-12",
+      "point": [
+        432.0,
+        304.0
+      ],
+      "reachable": true,
+      "steps": 154,
+      "node": [
+        430.0,
+        298.0
+      ],
+      "reason": null
+    }
+  ],
+  "links": [],
+  "thinGaps": [],
+  "unreachablePockets": [],
+  "bundleNav": {
+    "cell": 4,
+    "grid": "nav-grid.json"
+  },
+  "problems": []
+}

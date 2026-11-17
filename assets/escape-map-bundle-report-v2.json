@@ -1,0 +1,164 @@
+{
+  "schema": "generate2dmap.map_bundle_report.v1",
+  "status": "pass",
+  "method": "JSON Schema map.schema.json#/$defs/map_bundle_v2 (vendored copy, built-in Draft 2020-12 evaluator), file existence and sha256 of every referenced file, and cross-field rules: unique ids, tile indices against tilesets, wang/blob topology, material colours, portal targets and arrivals, slots and approach points",
+  "notProven": [
+    "reachability, portal arrivals and collision geometry (run map_nav.py check)",
+    "that collision and footprints match the painted art",
+    "engine or editor import (Tiled GUI, Godot, LDtk not verified)"
+  ],
+  "checks": [
+    {
+      "id": "schema",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "files",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "sha256",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "tilesets",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "layers",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "props_and_objects",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "collision",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "material_map",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "portals",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "spawns_anchors_interactions",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    },
+    {
+      "id": "document",
+      "status": "pass",
+      "value": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "threshold": {
+        "errors": 0
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "path": "escape-map-bundle.json",
+      "sha256": "c978cc6295cc47608b6a48f7145f08041e98fa249bcf167c42f3109352d2ac34",
+      "bytes": 1657
+    }
+  ],
+  "outputs": [],
+  "tool": {
+    "name": "map_bundle.py",
+    "version": "0.5.0"
+  },
+  "bundle": {
+    "id": "fox-forest-escape",
+    "version": 2,
+    "world": [
+      480.0,
+      352.0
+    ],
+    "counts": {
+      "tilesets": 0,
+      "layers": 0,
+      "props": 0,
+      "objects": 0,
+      "portals": 0,
+      "spawns": 1,
+      "anchors": 0,
+      "interactions": 12
+    }
+  },
+  "problems": []
+}
